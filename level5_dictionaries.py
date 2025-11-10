@@ -16,6 +16,11 @@ print("-" * 50)
 #     "boiling": 100
 # }
 
+water = {
+    "name": "Water",
+    "freezing": 0,
+    "boiling": 100
+}
 
 # Testing Part 18
 print("\nTesting Part 18...")
@@ -38,11 +43,13 @@ print("-" * 50)
 # Store it in a variable called 'liquid_name'
 # Hint: liquid_name = water["name"]
 
+liquid_name = water["name"]
 
 # TODO 32: Get the freezing point from the water dictionary
 # Store it in a variable called 'freezing_point'
 # Hint: freezing_point = water["freezing"]
 
+freezing_point = water["freezing"]
 
 # Testing Part 19
 print("\nTesting Part 19...")
@@ -65,6 +72,7 @@ print("-" * 50)
 # Key: "state_at_25"  Value: "Liquid"
 # Hint: water["state_at_25"] = "Liquid"
 
+water["state_at_25"]
 
 # Testing Part 20
 print("\nTesting Part 20...")
@@ -87,6 +95,15 @@ print("-" * 50)
 # "freezing": -39
 # "boiling": 357
 # Hint: Follow the same pattern as the water dictionary
+
+mercury = {
+    "name": "Mercury",
+    "freezing": -39,
+    "boiling": 357
+
+}
+    
+    
 
 
 # Testing Part 21
@@ -115,6 +132,8 @@ print("\nWater properties:")
 # for key in water:
 #     print(f"{key}: {water[key]}")
 
+for key in water:
+    print(f"{key}: {water[key]}")
 
 print("\nCongrats! You looped through a dictionary!\n")
 

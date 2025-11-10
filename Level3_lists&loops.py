@@ -8,15 +8,18 @@ print("-" * 50)
 # "Water", "Mercury", "Ethanol", "Nitrogen", "Oxygen"
 # Hint: liquids = ["Water", "Mercury", "Ethanol", "Nitrogen", "Oxygen"]
 
+liquids = ["Water", "Mercury", "Ethanol", "Nitrogen", "Oxygen"]
 
 # TODO 7: Create a list called 'freezing_points' with these values:
 # 0, -39, -114, -210, -218
 # Hint: Make sure the order matches the liquids list!
 
+freezing_points = ["0, -39, -114, -210, -218"]
 
 # TODO 8: Create a list called 'boiling_points' with these values:
 # 100, 357, 78, -196, -183
 
+boiling_points = ["100, 357, 78, -196, -183"]
 
 # Testing Part 6
 print("\nTesting Part 6...")
@@ -40,19 +43,22 @@ print("-" * 50)
 # Store it in a variable called 'second_liquid'
 # Hint: Remember, lists start at index 0! So second item is index 1
 
+second_list = liquids[1]
 
 # TODO 10: Get the freezing point of Water (first item in freezing_points)
 # Store it in a variable called 'water_freezing'
 
+water_freezing = freezing_points[0]
 
 # TODO 11: Get the boiling point of Ethanol (third item in boiling_points)
 # Store it in a variable called 'ethanol_boiling'
 
+ethanol_boiling = boiling_points[2]
 
 # Testing Part 7
 print("\nTesting Part 7...")
 try:
-    print(f"Second liquid: {second_liquid}")
+    print(f"Second liquid: {"second_liquid"}")
     print(f"Water freezes at: {water_freezing}°C")
     print(f"Ethanol boils at: {ethanol_boiling}°C")
     print("Congrats! Part 7 complete — you can access list items. Keep going!\n")
@@ -74,6 +80,8 @@ print("\nAll liquids in our database:")
 # for liquid in liquids:
 #     print(f"- {liquid}")
 
+for liquid in liquids:
+    print(f"- {liquid}")
 
 # Testing Part 8
 print("\nCongrats! Part 8 complete — you used a for loop!\n")
@@ -94,6 +102,11 @@ print("\nComplete liquid database:")
 #     print(f"{i+1}. {liquids[i]}")
 #     print(f"   Freezing: {freezing_points[i]}°C")
 #     print(f"   Boiling: {boiling_points[i]}°C")
+
+for i in range(len(liquids)):
+     print(f"{i+1}. {liquids[i]}")
+     print(f"   Freezing: {freezing_points[i]}°C")
+     print(f"   Boiling: {boiling_points[i]}°C")
 
 
 # Testing Part 9
@@ -117,6 +130,10 @@ print("-" * 50)
 #     if choice < 1 or choice > 5:
 #         print("Invalid! Please enter a number between 1 and 5.")
 
+while choice < 1 or choice > 5:
+     choice = int(input("Select a liquid (1-5): "))
+     if choice < 1 or choice > 5:
+         print("Invalid! Please enter a number between 1 and 5.")
 
 # Testing Part 10
 try:
@@ -142,11 +159,18 @@ print("-" * 50)
 # TODO 15: Ask the user for a temperature
 # Store it in a variable called 'temperature' and convert to float
 
+temperature = float(input("what is the temperature" ))
 
 # TODO 16: Determine the state of the selected liquid at that temperature
 # Use if/elif/else like in Level 1
 # Store the result in a variable called 'state'
 
+if temperature < freezing_points:
+    state = "Solid"
+elif temperature < boiling_points:
+    state = "Liquid"
+else:
+    state = "Gas"
 
 # Testing Part 11
 try:

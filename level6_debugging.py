@@ -7,7 +7,7 @@ boiling_points = [100, 357, 78, -196, -183]
 # ============================================================================
 # BUG 1: Missing colon in function definition
 # ============================================================================
-def display_welcome()  # BUG HERE - Missing colon
+def display_welcome():  # BUG HERE - Missing colon
     print("Welcome to the Liquid State Analyzer!")
     print("This program has bugs - can you find them all?")
 
@@ -17,7 +17,7 @@ def display_welcome()  # BUG HERE - Missing colon
 def display_all_liquids():
     print("\nAvailable liquids:")
     for i in range(len(liquids)):
-    print(f"{i+1}. {liquids[i]}")  # BUG HERE - Wrong indentation
+        print(f"{i+1}. {liquids[i]}")  # BUG HERE - Wrong indentation
 
 # ============================================================================
 # BUG 3: Wrong comparison operator
@@ -26,16 +26,16 @@ def get_state(temperature, freezing_point, boiling_point):
     if temperature < freezing_point:
         return "Solid"
     elif temperature > boiling_point:  # BUG HERE - Should be < not >
-        return "Liquid"
-    else:
         return "Gas"
+    else:
+        return "Liquid"
 
 # ============================================================================
 # BUG 4: Wrong list index (off by one error)
 # ============================================================================
 def get_liquid_name(choice):
     # User enters 1-5, but lists start at 0
-    return liquids[choice]  # BUG HERE - Should be choice - 1
+    return liquids[choice-1]  # BUG HERE - Should be choice - 1
 
 # ============================================================================
 # BUG 5: Swapped return values
@@ -45,7 +45,7 @@ def calculate_distances(temperature, freezing_point, boiling_point):
     distance_from_boiling = boiling_point - temperature
     
     # BUG HERE - These are swapped!
-    return distance_from_boiling, distance_from_freezing
+    return distance_from_freezing, distance_from_boiling
 
 # ============================================================================
 # BUG 6: Variable name typo
@@ -57,7 +57,7 @@ def display_liquid_info(liquid_index):
     
     print(f"\nLiquid Information:")
     print(f"Name: {liquid_name}")
-    print(f"Freezing Point: {freezeng}°C")  # BUG HERE - Typo in variable name
+    print(f"Freezing Point: {freezing}°C")  # BUG HERE - Typo in variable name
     print(f"Boiling Point: {boiling}°C")
 
 # ============================================================================
@@ -65,14 +65,14 @@ def display_liquid_info(liquid_index):
 # ============================================================================
 def get_user_choice():
     display_all_liquids()
-    choice = input("\nSelect a liquid (1-5): ")  # BUG HERE - Should convert to int
+    choice = int(input("\nSelect a liquid (1-5): "))  # BUG HERE - Should convert to int
     return choice
 
 # ============================================================================
 # BUG 8: Missing 'f' in f-string
 # ============================================================================
 def display_state_analysis(liquid_name, temperature, state):
-    print("\nANALYSIS COMPLETE!")
+    print(f"\nANALYSIS COMPLETE!")
     print("=" * 50)
     print("At {temperature}°C, {liquid_name} is: {state}")  # BUG HERE - Missing f before string
     print("=" * 50)
@@ -82,7 +82,7 @@ def display_state_analysis(liquid_name, temperature, state):
 # ============================================================================
 def compare_all_liquids(temperature):
     print(f"\nAll liquids at {temperature}°C:")
-    for i in range(len(liquids) + 1):  # BUG HERE - Goes one past the end of list
+    for i in range(len(liquids) -1):  # BUG HERE - Goes one past the end of list
         state = get_state(temperature, freezing_points[i], boiling_points[i])
         print(f"  {liquids[i]}: {state}")
 
@@ -95,7 +95,7 @@ def get_temperature_range(liquid_index):
     range_value = boiling - freezing
     
     # Create a string that shows the range
-    range_string = f"{range_value}"
+    range_string = (f"{range_value}")
     
     # BUG HERE - Trying to use string as index
     test_value = liquids[range_string]

@@ -15,15 +15,17 @@ print("-" * 50)
 # Example: my_variable = "some value"
 # Write your code here:
 
+liquid_name= "Water"
 
 # TODO 2: Create a variable called 'freezing_point' and set it to 0
 # Hint: This is a number (integer), so don't use quotes
 # Write your code here:
-
+freezing_point = 0
 # TODO 3: Create a variable called 'boiling_point' and set it to 100.0
 # Hint: This is a decimal number (float), notice the .0
 # Write your code here:
 
+boiling_point = 100.0
 
 # Testing Part 1 - do not modify!
 print("\nTesting Part 1...")
@@ -44,12 +46,12 @@ print("PART 2: Understanding Data Types")
 print("-" * 50)
 
 # TODO 4: Create a variable 'student_name' with YOUR name as a string
-
+student_name="tresor"
 # TODO 5: Create a variable 'current_grade' and set it to 8 (your grade)(integer)
-
+current_grade= 8
 
 # TODO 6: Create a variable 'python_version' and set it to 3.11 (float)
-
+python_version= 3.11
 
 # Testing Part 2 - do not modify!
 print("\nTesting Part 2...")
@@ -74,3 +76,5 @@ print("\nYou've learned:")
 print("How to create and use variables")
 print("Different data types (string, int, float)")
 print("=" * 50)
+
+

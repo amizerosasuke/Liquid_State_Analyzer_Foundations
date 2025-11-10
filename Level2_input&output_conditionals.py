@@ -7,14 +7,18 @@ print("-" * 50)
 # TODO 7: Ask the user for their favorite liquid using input()
 # Store the answer in a variable called 'favorite_liquid'
 # Hint: favorite_liquid = input("What is your favorite liquid? ")
-
+favorite_liquid = input("what's your favourite liquid")
 
 # TODO 8: Ask the user to enter a temperature (as a number)
 # Store it in a variable called 'temperature'
 # IMPORTANT: Convert the input to float using float()
 # Hint: temperature = float(input("Enter temperature in Celsius: "))
 
+temperature = float(input("Enter temperature in Celsius"))
 
+boiling_point = float(input("Enter the boiling point of your favorite liquid"))
+
+freezing_point = float(input("Enter the freezing point of your favourite liquid"))
 # Testing Part 3 - do not modify!
 print("\nTesting Part 3...")
 try:
@@ -37,12 +41,13 @@ print("-" * 50)
 
 # TODO 9: Calculate the temperature range (boiling_point - freezing_point)
 # Store the result in a variable called 'temperature_range'
-
-
+temperature_range = (boiling_point - freezing_point)
+liquid_name = favorite_liquid
 # TODO 10: Calculate how far the current temperature is from freezing
 # Store the result in a variable called 'degrees_from_freezing'
 # Hint: Use temperature - freezing_point
 
+degrees_from_freezing = (temperature - freezing_point)
 
 # Testing Part 4 - do not modify!
 print("\nTesting Part 4...")
@@ -71,6 +76,16 @@ print(f"\nAnalyzing {liquid_name} at {temperature}°C...")
 # Else, the state is "Gas"
 # Store the result in a variable called 'state'
 
+
+if temperature < freezing_point:
+    state = "Solid"
+elif temperature < boiling_point:
+    state = "Liquid"
+else:
+    state = "Gas"
+
+
+
 # Hint: Structure should be:
 # if temperature < freezing_point:
 #     state = "Solid"
@@ -78,6 +93,8 @@ print(f"\nAnalyzing {liquid_name} at {temperature}°C...")
 #     state = "Liquid"
 # else:
 #     state = "Gas"
+
+
 
 
 # Testing Part 5 - do not modify!
